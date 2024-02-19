@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display{
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de la posición de un objeto (x) con MRUA</h1>
+    <label for="aceleracion">Aceleración: </label>
+    <input type="number" id="aceleracion">
+    <button onclick="calculoposicion()">Cálculo de la posición(x)</button>
+    <div id="display"></div>
+    <script>
+        function calculoposicionformulario(){
+            let aceleracion=document.getElementById("aceleracion").value;
+            let tiempo=document.getElementById("tiempo").value;
+            let posicion=calculaposicionMRUA(aceleracion,tiempo);
+            let display=document.getElementById("display");
+            display.innerHTML="La posición x es: " +posicion+"m";
+        }
+        function calculaposicionMRUA(a,t){
+            posicion=a*(Math.pow(t,2))/2;
+            return posicion;
+        }
+
+        function calculoposicion(){
+            let aceleracion=prompt("Dime la aceleración(m/s*s): ");
+            let tiempo=prompt("Dime el tiempo(s): ");
+            let pos = calculaposicionMRUA(ac,tm);
+            alert("La posición x es: " +posicion+"m");
+
+        }
+    </script>
+</body>
+</html>
